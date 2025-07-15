@@ -1,23 +1,51 @@
-Este aplicativo é projetado para facilitar a conversão de arquivos entre formatos físicos e strings Base64. Ele permite que os usuários convertem arquivos em Base64 e, inversamente, convertam strings Base64 de volta para arquivos físicos. As principais funcionalidades do aplicativo são:
 
-1. **Conversão de Arquivo para Base64:**
-   - Permite ao usuário selecionar um arquivo físico de seu sistema. O aplicativo converte o arquivo selecionado em uma string Base64, que pode ser facilmente compartilhada ou armazenada em sistemas que exigem esse formato.
+🖼️ Conversor de Imagem ↔️ Base64 - Delphi
 
-2. **Conversão de Base64 para Arquivo:**
-   - Permite ao usuário inserir ou carregar uma string Base64. O aplicativo decodifica a string Base64 e recria o arquivo físico original, que pode ser salvo no sistema do usuário.
+Este projeto é uma aplicação simples em **Delphi VCL** que permite converter imagens (JPEG/PNG) para texto Base64 e vice-versa. É útil para aplicações que necessitam armazenar ou transmitir imagens em formato textual.
 
-**Funcionalidades Adicionais:**
+## 🔄 Funcionalidades
 
-- **Interface Intuitiva:**
-  - O aplicativo possui uma interface de usuário amigável e fácil de usar, com opções claras para carregar arquivos e inserir strings Base64.
+- 📤 Carregamento de imagem local (JPEG ou PNG);
+- 🔁 Conversão de imagem para string Base64;
+- 📥 Conversão de Base64 de volta para imagem;
+- 🧹 Limpeza da imagem e do texto Base64;
+- 📋 Interface gráfica simples e intuitiva com campos de visualização e edição.
 
-- **Suporte a Diversos Tipos de Arquivos:**
-  - O aplicativo é capaz de lidar com diferentes tipos de arquivos, incluindo imagens, documentos e outros formatos suportados.
+## 🧠 Como Funciona
 
-- **Validação e Tratamento de Erros:**
-  - Inclui mecanismos de validação para garantir que os arquivos e strings Base64 sejam processados corretamente, com mensagens de erro informativas em caso de problemas.
+- A imagem é carregada por meio de um `TOpenDialog` e exibida em um componente `TImage`;
+- A conversão da imagem para Base64 é feita com a função `BitmapToBase64`;
+- A conversão reversa é feita com a função `Base64ToBitmap`;
+- As funções estão localizadas na unit auxiliar `untBase64Utils`.
 
-- **Armazenamento e Exportação:**
-  - Após a conversão, o aplicativo permite que o usuário salve o arquivo convertido em seu sistema ou exporte a string Base64 para outros usos.
+## 🖼️ Interface
 
-Este aplicativo é uma ferramenta útil para desenvolvedores e usuários que precisam realizar conversões de dados entre formatos de arquivo e Base64, proporcionando uma solução prática e eficiente para o gerenciamento de dados em diferentes formatos.
+A interface consiste em:
+
+- Campo para seleção do caminho da imagem;
+- Botão para localizar a imagem no disco;
+- Visualização da imagem carregada;
+- Campo `TMemo` para visualização/edição do texto Base64;
+- Botões para converter, reverter e limpar os dados.
+
+## ▶️ Como Executar
+
+1. Abra o projeto no **Delphi (RAD Studio)**;
+2. Compile e execute o formulário `TfrmPrincipal`;
+3. Clique em "Localizar Foto" e escolha uma imagem JPEG ou PNG;
+4. Use os botões para converter a imagem para Base64 ou o texto de volta para imagem;
+5. O campo `TMemo` será preenchido ou lido conforme a operação.
+
+## 🔧 Requisitos
+
+- Delphi (VCL);
+- Suporte nativo a imagens PNG e JPEG;
+- Unit `untBase64Utils` com funções de conversão.
+
+## 📃 Licença
+
+Este projeto está licenciado sob a MIT License.
+
+---
+
+Desenvolvido por Janderson Silva.
